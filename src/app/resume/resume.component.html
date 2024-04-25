@@ -1,0 +1,264 @@
+<div class="row">
+
+    <div class="col pr-0">
+        
+        <form [formGroup]="resumebuilder">
+        
+        <div class="section">
+            <div class="section-header">
+                <div class="heading">Personal Details</div>
+            </div>
+                <div class="row">
+                <div class="col">
+                    <div class="form-group">   
+                        <label for="headname">Name</label> 
+                        <input type="text" class="form-control" formControlName="headName" placeholder="Your Name"> 
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="location">Location</label> 
+                        <input type="text" class="form-control" formControlName="location" placeholder="Current Location"> 
+                    </div>
+                </div>
+                </div>
+
+                <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="contactnumber">Contact Number</label> 
+                        <input type="text" class="form-control" formControlName="contactNumber" placeholder="Contact Number"> 
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="form-group">
+                        <label for="emailid"> email id </label> 
+                        <input type="email" class="form-control" formControlName="emailid" placeholder="email id"> 
+                    </div>
+                </div>
+                </div>
+        </div>
+        
+        <div class="section">
+            <div class="form-group">
+                <label for="summary"> Profile Summary </label> 
+                <input type="text" class="form-control" formControlName="summary" placeholder="describe about yourself"> 
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-header">
+                <div class="heading"> Professional Experience </div>
+                <button type="button" (click)="addInputFieldsExperience()" class="btns secondary-btn small-btn"> Add More Fields </button>
+            </div>
+                <div formArrayName="experience">
+                <div class="mb-15" *ngFor="let group of getControlsExperience(); let i=index" [formGroupName]="i">
+                    <div class="row"> 
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title</label>
+                            <input type="text" class="form-control" formControlName="jobTitle" placeholder="Job Title">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="employer">Employer</label>
+                            <input type="text" class="form-control" formControlName="employer" placeholder="Employer">
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="city"> City </label>
+                            <input type="text" class="form-control" formControlName="city" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="country"> Country</label>
+                            <input type="text" class="form-control" formControlName="country" placeholder="Country">
+                        </div>
+                    </div>
+
+                    </div>
+
+                    <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="startDate"> Date of Joining </label>
+                            <input type="date" class="form-control" formControlName="startDate">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="endDate"> Last Date </label>
+                            <input type="date" class="form-control" formControlName="endDate"> 
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aboutThisRole"> About this Role </label>
+                        <input type="text" class="form-control" formControlName="aboutThisRole" placeholder="describe abouth your roles and responsibilities">
+                    </div>
+                    <button type="button" (click)="removeInputFieldsExperience(i)" class="btns red-btn small-btn"> remove </button>
+                </div>
+                </div>
+        </div>
+        
+        <div class="section">
+            <div class="form-group">
+                <div class="section-header">
+                    <label for="education"> Qualification Details </label> 
+                    <button type="button" (click)="addInputFieldsQualification()" class="btns secondary-btn small-btn"> Add More Fields </button>
+                </div>
+                <div formArrayName="qualificationName">
+                <div *ngFor="let group of getControlsQualification(); let i=index" [formGroupName]="i">
+                    <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="aboutThisRole"> Qualification </label>
+                            <input type="text" class="form-control" formControlName="qualification" placeholder="Qualification">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="aboutThisRole"> Year of Passing </label>
+                            <input type="date" class="form-control" formControlName="yearOfPassing">
+                        </div>
+                    </div>
+                    </div>
+                    <button type="button" (click)="removeInputFieldsQualification(i)" class="btns red-btn small-btn"> remove </button>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-header">
+                <div class="heading"> Certification Details </div>
+                <button type="button" (click)="addInputFieldsCertification()" class="btns secondary-btn small-btn"> Add More Fields </button> 
+            </div>
+            <div formArrayName="certificationName">
+                <div *ngFor="let group of getControlsCertification(); let i=index" [formGroupName]="i">
+                            <div class="form-group">
+                                <label for="certification">Certification </label>
+                                <input type="text" class="form-control" formControlName="certification" placeholder="Certification">
+                            </div>
+                        <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="duration_from">From</label>
+                                <input type="date" class="form-control" formControlName="duration_from">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="duration_to"> To </label>
+                                <input type="date" class="form-control" formControlName="duration_to">
+                            </div>
+                        </div>
+                        </div>
+                    <button type="button" (click)="removeInputFieldsCertification(i)" class="btns red-btn small-btn"> remove </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="form-group">
+                <label for="skills"> Skills </label> 
+                <input type="text" class="form-control" formControlName="skills" placeholder="write your skills here">
+                <!-- add bullet points here -->
+            </div>
+        </div>
+        <div class="form-footer">
+            <button type="submit" class="btns primary-btn"> Save </button>
+        </div>
+        
+        </form>
+    </div>
+
+    
+        <div class="col pl-0">
+            <div class="resume">
+                <div class="resume-header"*ngIf="resumebuilder.controls['headName'].value">
+                        <div class="value name" >{{ resumebuilder.controls['headName'].value }}</div>
+                        <div class="insideheader">
+                            <div class="value">{{ resumebuilder.controls['location'].value }}</div>
+                            <span class="pipe-seperator">|</span>
+                            <div class="value">{{ resumebuilder.controls['contactNumber'].value }}</div>
+                            <span class="pipe-seperator">|</span>
+                            <div class="value">{{ resumebuilder.controls['emailid'].value }}</div>
+                        </div>
+                </div>
+                <div class="resume-body">
+                    <div class="resumedetail">
+                        <div class="value">{{ resumebuilder.controls['summary'].value }}</div>
+                    </div>
+                    <div class="section">
+                        <div class="heading">Professional Experience</div>
+                        <div *ngFor="let group of getControlsExperience()">
+                            <div class="resumedetail" >
+                                <div class="insidejobtitle">
+                                    <div class="value">{{ group.value.jobTitle }}</div>
+                                        <span>,</span> 
+                                    <div class="value">{{ group.value.startDate }}</div>
+                                        <span class="pipe-seperator">-</span>   
+                                    <div class="value">{{ group.value.endDate }}</div>
+                                </div>
+                                <div class="insidejobtitle">
+                                    <div class="value">{{ group.value.employer }}</div>
+                                        <span class="pipe-seperator"></span>
+                                    <div class="value">{{ group.value.city }}</div>
+                                        <span class="pipe-seperator"></span>
+                                    <div class="value">{{ group.value.country }}</div>
+                                </div>
+                    
+                                <div class="value">{{ group.value.aboutThisRole }}</div>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="section">
+                        <div class="heading">Qualification</div>
+                        <div *ngFor="let group of getControlsQualification()">
+                            <div class="resumedetail">
+                                <div class="insidequalification">
+                                    <div class="value">{{ group.value.qualification }}</div>
+                                    <span class="pipe-seperator">|</span>
+                                    <div class="value">{{ group.value.yearOfPassing }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="heading">Certification</div>
+                        <div *ngFor="let group of getControlsCertification()">
+                            <div class="resumedetail" >
+                                    <div class="value">{{ group.value.certification }}</div>
+                                <div class="insidecertification">
+                                    <div class="value">{{ group.value.duration_from}}</div>
+                                    <span class="pipe-seperator">|</span>
+                                    <div class="value">{{ group.value.duration_to }}</div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="heading"> Skills </div>
+                        <div class="resumedetail">
+                            <div class="value">{{ resumebuilder.controls['skills'].value }}</div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+            <!-- <button (click)="downloadPdf()">Download PDF</button> -->
+    </div>
+
+</div>

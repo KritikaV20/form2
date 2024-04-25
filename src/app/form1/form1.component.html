@@ -1,0 +1,88 @@
+<h2> fill out the below form </h2>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <div class="name">
+        <label for="firts-name"> First Name : </label>
+        <input type="text" name="" formControlName="firstName" placeholder="First Name">
+
+        <br>
+        <label for="last-name"> Last Name : </label>
+        <input type="text" name="" formControlName="lastName" placeholder="Last Name">
+
+        <br>
+        <label for="email"> email id :</label>
+        <input type="email" name="" formControlName="email" placeholder="email here">
+
+        <br>
+        <label for="password">Password : </label>
+        <input type="password" name="" formControlName="password" placeholder="type your password here">
+
+    </div>
+
+    <br>
+    <div class="gender">
+        <label for="gender"> Gender : </label>
+         <select name="" formControlName="gender">
+            <option value="">--Select--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+         </select>
+    </div>
+
+    <br>
+    <div class="dob">
+        <label for="DOB"> DOB : </label>
+         <input type="date" name="" formControlName="dateOfBirth">
+    </div>
+
+    <br>
+    <div formGroupName="address">
+        <h3>Address :- </h3>
+      
+        <label for="street">Street: </label>
+        <input type="text" name="" formControlName="street">
+
+        <br>
+        <label for="city">City: </label>
+        <input type="text" name="" formControlName="city">
+
+        <br>
+        <label for="state">State: </label>
+        <input type="text" name="" formControlName="state">
+
+        <br>
+        <label for="zip">Zip Code: </label>
+       <input type="number" name="" formControlName="zip">
+      
+    </div>
+
+    <br>
+    <div formGroupName="radiobutton"> 
+        <label for="languages"> Languages: </label><br>
+        <input type="radio" formControlName="languages" value="english" name="languages" (change)="handleChange($event)"/> English
+        <input type="text" name="blank_input" formControlName="englishText">
+        <br>    
+        <input type="radio" formControlName="languages" value="hindi" name="languages" (change)="handleChange($event)"/> Hindi
+        <input type="text" name="blank_input" formControlName="hindiText">
+        <br>
+        <input type="radio" formControlName="languages" value="spanish" name="languages" (change)="handleChange($event)"/> Spanish
+        <input type="text" name="blank_input" formControlName="spanishText">
+        <br>
+    </div>
+
+    <br>
+    <div formGroupName="checkbutton">
+        <label>
+        <input type="checkbox" name="checkbox" formControlName="checkbox">
+        tick here to acknowledge the above details
+        </label>
+    </div>
+    
+    <br>
+    <button type="submit" 
+    [disabled]="!profileForm.valid"
+    (click)="updateValue()">
+    submit</button>
+
+</form>

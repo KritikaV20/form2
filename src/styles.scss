@@ -1,1 +1,136 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.mb-15 {
+    margin-bottom: 15px;
+}
+.pr-0 {
+    padding-right: 0 !important;
+}
+.pl-0 {
+    padding-left: 0 !important;
+}
+.row {
+    display: flex;
+    margin: 0 -15px;
+}
+.col {
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 0 15px;
+}
+form {
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+.section {
+    padding: 0 0 30px 0;
+    .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 15px;
+    }
+}
+.heading {
+    font-size: 16px;
+    font-weight: 600;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+.form-control{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+    width: 100%;
+    height: 30px;
+    padding: 5px 10px;
+}
+.btns {
+    color: #fff;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.small-btn {
+    padding: 3px 5px;
+    font-size: 12px;
+}
+.primary-btn {
+    background-color: #007bff;
+}
+.secondary-btn {
+    background-color: grey;
+}
+.red-btn {
+    background-color: red;
+}
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+.resumedetail {
+    margin-bottom: 10px;
+}
+.value {
+    font-size: 12px;
+}
+.resume{
+    padding: 20px;
+    .heading {
+        text-align: center;
+        color: #007bff;
+        margin: 0 0 10px;
+    }
+}
+.resume-header{
+    background-color: #007bff;
+    color: #fff;
+    padding: 40px 10px 20px;
+    text-align: center;
+}
+.insideheader{
+    display: flex;
+    justify-content:center;
+    .value {
+        font-size: 14px;
+    }
+}
+.resume-body{
+    margin: 20px 40px;
+}
+.pipe-seperator {
+    padding: 0 10px;
+}
+.insidejobtitle{
+    display: flex;
+    align-items: center;
+}
+.insidequalification{
+    display: flex;
+    align-items: center;
+}
+.insidecertification{
+    display: flex;
+    align-items: center;
+}
+.name {
+    font-size: 30px;
+    margin: 0 0 10px;
+}
